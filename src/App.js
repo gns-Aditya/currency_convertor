@@ -1,11 +1,9 @@
 import React from "react";
+import { Route } from "react-router";
+
 import GetCurrencyList from "./components/apicalls/GetCurrencies";
 
 function App() {
-  return (
-    <React.Fragment>
-      <GetCurrencyList></GetCurrencyList>
-    </React.Fragment>
-  );
+  return <GetCurrencyList></GetCurrencyList>;
 }
 export default App;
