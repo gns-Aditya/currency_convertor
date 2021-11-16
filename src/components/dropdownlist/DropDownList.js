@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import GetUrl from "../geturls/GetUrl";
 function DropDownList(props) {
   const [date, setDate] = useState("latest");
   const [currency, setCurrency] = useState("usd");
@@ -26,6 +26,7 @@ function DropDownList(props) {
         ))}
       </select>
       <input type="date" max={currentDate} onChange={dateChanger}></input>
+      <GetUrl date={date} currency={currency}></GetUrl>
     </React.Fragment>
   );
 }
