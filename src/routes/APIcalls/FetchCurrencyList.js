@@ -1,6 +1,6 @@
-import DropDownList from "../dropdownlist/DropDownList";
-import { useState, useEffect } from "react";
-function GetCurrencyList() {
+import React, { useState, useEffect } from "react";
+import DropDown from "../DropDown";
+function FetchCurrencyList() {
   const [currencyShort, setCurrencyShort] = useState([]);
   const [currencyLong, setCurrencyLong] = useState([]);
   useEffect(() => {
@@ -15,10 +15,12 @@ function GetCurrencyList() {
     setCurrencyLong(Object.values(data));
   }
   return (
-    <div>
-      <a href="/s">go</a>
-      <DropDownList long={currencyLong} short={currencyShort}></DropDownList>
-    </div>
+    <React.Fragment>
+      <DropDown short={currencyShort} long={currencyLong}>
+        {currencyShort}
+      </DropDown>
+      <a href="/f">go back</a>
+    </React.Fragment>
   );
 }
-export default GetCurrencyList;
+export default FetchCurrencyList;
