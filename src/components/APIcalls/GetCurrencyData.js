@@ -1,20 +1,17 @@
 import { useState, useEffect } from "react";
 function GetCurrencyData(props) {
-  const secondCurrency = props.second;
-  const [currentValue, setCurrentValue] = useState("");
-  async function getData() {
-    const response = await fetch(props.children);
+  const url = props.link;
+  const curr = props.curr;
+  const [currencyList, setCurrencyList] = useState([]);
+  const [currencyData, setCurrencyData] = useState([]);
+  async function fetchCurrencyData() {
+    const response = await fetch(url);
     const data = await response.json();
-    setCurrentValue(data[secondCurrency]);
+    setCurrencyList(Object.keys(data[curr]));
+    setCurrencyData(Object.values(data[curr]));
   }
   useEffect(() => {
-    getData();
-  }, [getData]);
-  return (
-    <h1>
-      1{props.first} = {currentValue}
-      {props.second}
-    </h1>
-  );
+    fetchCurrencyData();
+  }, [fetchCurrencyData]);
 }
 export default GetCurrencyData;

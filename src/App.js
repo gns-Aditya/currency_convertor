@@ -1,9 +1,9 @@
 import React from "react";
-import FetchCurrencyList from "./components/APIcalls/FetchCurrencyList";
+import GetCurrencyList from "./components/apicalls/GetCurrencies";
 function App() {
   return (
     <React.Fragment>
-      <FetchCurrencyList></FetchCurrencyList>
+      <GetCurrencyList></GetCurrencyList>
     </React.Fragment>
   );
 }

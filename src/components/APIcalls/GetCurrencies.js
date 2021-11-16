@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
-import DropDown from "../DropDown";
-function FetchCurrencyList() {
+import DropDownList from "../dropdownlist/DropDownList";
+import { useState, useEffect } from "react";
+function GetCurrencyList() {
   const [currencyShort, setCurrencyShort] = useState([]);
+  const [currencyLong, setCurrencyLong] = useState([]);
   useEffect(() => {
     fetchCurrencyList();
   }, []);
@@ -11,11 +12,10 @@ function FetchCurrencyList() {
     );
     const data = await response.json();
     setCurrencyShort(Object.keys(data));
+    setCurrencyLong(Object.values(data));
   }
   return (
-    <React.Fragment>
-      <DropDown>{currencyShort}</DropDown>
-    </React.Fragment>
+    <DropDownList long={currencyLong} short={currencyShort}></DropDownList>
   );
 }
-export default FetchCurrencyList;
+export default GetCurrencyList;
