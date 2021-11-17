@@ -7,7 +7,11 @@ function GetUrl(props) {
   const newUrl = url + date + "/currencies/" + curr + ".json";
   return (
     <React.Fragment>
-      <GetCurrencyData link={newUrl} curr={curr}></GetCurrencyData>
+      <GetCurrencyData
+        link={newUrl}
+        long={props.long}
+        curr={curr}
+      ></GetCurrencyData>
     </React.Fragment>
   );
 }

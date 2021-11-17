@@ -9,3 +9,7 @@ select {
   height: 30px;
   width: 200px;
 }
+input {
+  height: 24px;
+  margin-left: 200px;
+}

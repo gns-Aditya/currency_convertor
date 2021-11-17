@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import GetUrl from "../geturls/GetUrl";
+import "./DropDownList.css";
 function DropDownList(props) {
   const [date, setDate] = useState("latest");
   const [currency, setCurrency] = useState("usd");
@@ -19,14 +20,21 @@ function DropDownList(props) {
 
   return (
     <React.Fragment>
-      <select onChange={currencyChanger}>
-        <option value="usd">United States Dollar</option>
-        {long.map((curr) => (
-          <option value={short[long.indexOf(curr)]}>{curr}</option>
-        ))}
-      </select>
-      <input type="date" max={currentDate} onChange={dateChanger}></input>
-      <GetUrl date={date} currency={currency}></GetUrl>
+      <div className="__input">
+        <select onChange={currencyChanger}>
+          <option value="usd">United States Dollar</option>
+          {long.map((curr) => (
+            <option value={short[long.indexOf(curr)]}>{curr}</option>
+          ))}
+        </select>
+        <input
+          className="picker"
+          type="date"
+          max={currentDate}
+          onChange={dateChanger}
+        ></input>
+        <GetUrl date={date} currency={currency} long={long}></GetUrl>
+      </div>
     </React.Fragment>
   );
 }

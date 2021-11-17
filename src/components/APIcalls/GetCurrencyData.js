@@ -3,6 +3,7 @@ import DisplayCurrency from "../displaycurrency/DisplayCurrency";
 function GetCurrencyData(props) {
   const url = props.link;
   const curr = props.curr;
+  const long = props.long;
   const [currencyList, setCurrencyList] = useState([]);
   const [currencyData, setCurrencyData] = useState([]);
   async function fetchCurrencyData() {
@@ -10,7 +11,6 @@ function GetCurrencyData(props) {
     const data = await response.json();
     setCurrencyList(Object.keys(data[curr]));
     setCurrencyData(Object.values(data[curr]));
-    console.log(currencyList);
   }
   useEffect(() => {
     fetchCurrencyData();
@@ -19,6 +19,7 @@ function GetCurrencyData(props) {
     <DisplayCurrency
       currencyList={currencyList}
       currencyData={currencyData}
+      long={long}
     ></DisplayCurrency>
   );
 }

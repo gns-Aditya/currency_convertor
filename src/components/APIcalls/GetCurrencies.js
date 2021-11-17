@@ -1,5 +1,6 @@
 import DropDownList from "../dropdownlist/DropDownList";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 function GetCurrencyList() {
   const [currencyShort, setCurrencyShort] = useState([]);
   const [currencyLong, setCurrencyLong] = useState([]);
@@ -16,9 +17,10 @@ function GetCurrencyList() {
   }
   return (
     <div>
-      <a href="/s">go</a>
       <DropDownList long={currencyLong} short={currencyShort}></DropDownList>
+      <Link to="/s">Show</Link>
     </div>
   );
 }
+
 export default GetCurrencyList;

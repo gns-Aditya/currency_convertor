@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import DropDown from "../DropDown";
 function FetchCurrencyList() {
   const [currencyShort, setCurrencyShort] = useState([]);
@@ -19,7 +20,7 @@ function FetchCurrencyList() {
       <DropDown short={currencyShort} long={currencyLong}>
         {currencyShort}
       </DropDown>
-      <a href="/f">go back</a>
+      <Link to="/">Hide</Link>
     </React.Fragment>
   );
 }

@@ -1,5 +1,17 @@
 .__currencies {
+  width: 60vw;
+  margin-left: 400px;
+}
+.__currency {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+p {
+  display: inline;
+  font-size: 24px;
+  font-family: Roboto;
+}
+.__currency__value {
+  font-weight: bolder;
 }

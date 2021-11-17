@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "./GetCurrencyData.css";
 function GetCurrencyData(props) {
   const secondCurrency = props.second;
   const [currentValue, setCurrentValue] = useState("");

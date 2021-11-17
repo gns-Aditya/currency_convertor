@@ -26,12 +26,6 @@ function DropDown(props) {
     <React.Fragment>
       <div className="dropdown__list">
         <form>
-          <input
-            onChange={dateChanger}
-            type="date"
-            min="2020-11-22"
-            max={currentDate}
-          ></input>
           <select onChange={firstCurrencyChanger}>
             <option value="usd">United States Dollar</option>
             {currencyLong.map((curr) => (
@@ -48,6 +42,12 @@ function DropDown(props) {
               </option>
             ))}
           </select>
+          <input
+            onChange={dateChanger}
+            type="date"
+            min="2020-11-22"
+            max={currentDate}
+          ></input>
         </form>
       </div>
       <SelectedCurrency

@@ -7,8 +7,8 @@ import FetchCurrencyList from "./routes/APIcalls/FetchCurrencyList";
 function App() {
   return (
     <div>
-      <Route path="/f" component={GetCurrencyList}></Route>
       <Route path="/s" component={FetchCurrencyList}></Route>
+      <Route exact path="/" component={GetCurrencyList}></Route>
     </div>
   );
 }
