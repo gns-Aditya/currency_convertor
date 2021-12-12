@@ -1,15 +1,13 @@
-import React from "react";
-import { Route } from "react-router";
-
-import GetCurrencyList from "./components/apicalls/GetCurrencies";
-import FetchCurrencyList from "./routes/APIcalls/FetchCurrencyList";
-
+import DropDownList from './components/DropDownList';
+import DisplayCurrency from './components/DisplayCurrency';
+import React from 'react';
 function App() {
   return (
     <div>
-      <Route path="/s" component={FetchCurrencyList}></Route>
-      <Route exact path="/" component={GetCurrencyList}></Route>
+      <DropDownList />
+      <DisplayCurrency />
     </div>
   );
 }
+
 export default App;
